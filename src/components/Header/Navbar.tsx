@@ -26,7 +26,7 @@ export const Navbar = () => {
           Log In
         </button>
       )}
-      {isAuthenticated && <div className="navbar__brand">user.name</div>}
+      {isAuthenticated && <div className="navbar__brand">{user?.name && user.name}</div>}
     </nav>
   );
 };
