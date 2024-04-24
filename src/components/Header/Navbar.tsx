@@ -21,7 +21,9 @@ export const Navbar = () => {
             Orders
           </NavLink>
         </li>
-       
+        <li>
+          <button onClick={() => loginWithRedirect()}>Log In</button>
+        </li>
       </ul>
     </nav>
   );
