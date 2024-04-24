@@ -37,3 +37,20 @@
 .navbar__link.active {
   color:  #004DD7;
 }
+
+.login-button {
+  background-color: #ffffff; /* White background color */
+  color: #000000; /* Black text color */
+  padding: 10px 10px; /* Padding around text */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor style on hover */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.login-button:hover {
+  background-color: #e0e0e0; /* Light gray on hover */
+  color: #000000; /* Black text color on hover */
+}
+

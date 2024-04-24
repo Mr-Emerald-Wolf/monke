@@ -1,16 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from '@auth0/auth0-react';
 import './Navbar.css';
 
 export const Navbar = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
   return (
     <nav className="navbar">
       <span className="navbar__brand">RipperDoc Store</span>
 
       <ul className="flex-1">
-        
         <li>
           <NavLink className="navbar__link" to="/" end>
             Home
@@ -21,10 +20,13 @@ export const Navbar = () => {
             Orders
           </NavLink>
         </li>
-        <li>
-          <button onClick={() => loginWithRedirect()}>Log In</button>
-        </li>
       </ul>
+      {!isAuthenticated && (
+        <button className="login-button" onClick={() => loginWithRedirect()}>
+          Log In
+        </button>
+      )}
+      {isAuthenticated && <div className="navbar__brand">user.name</div>}
     </nav>
   );
 };
